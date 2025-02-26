@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header -->
+     <header>
+      <div class="header-container">
+        <div class="header-btn">
+          <button id="shrink-btn">Shrink</button>
+          <button id="close-btn">Close</button>
+        </div>
+      </div>
+     </header>
+
+    <!-- Main -->
+     <main>
+      <div class="time-container">
+        <div class="time-display"> <span id="time">1</span> </div>
+        <div class="time-btn">
+          <button id="btn-plus1" onclick="adjustTime(1)">+1 min</button>
+          <button id="btn-plus5" onclick="adjustTime(5)">+5 min</button>
+          <button id="btn-plus10" onclick="adjustTime(10)">+10 min</button>
+          <button id="btn-minus1" onclick="adjustTime(-1)">-1 min</button>
+        </div>
+        <button id="start" onclick="startTimer()">Start</button>
+      </div>
+     </main>
+
+     <script src="renderer.js"></script>
+     <script>
+      let time = 1; // Tempo di default a 1 minuto
+      
+      function adjustTime(amount) {
+          time += amount;
+          if (time < 1) time = 1; // Evita che scenda sotto 1 minuto
+          document.getElementById("time").innerText = time;
+      }
+      
+
+    </script>
+
+
+  </body>
+</html>

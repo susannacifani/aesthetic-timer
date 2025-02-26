@@ -1,0 +1,261 @@
+/* background */
+body {
+    width: 300px;  /* Larghezza dell'immagine */
+    height: 375px; /* Altezza dell'immagine */
+    margin: 0;
+    background: url('./assets/Frame1.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Impedisce la selezione del testo in tutta l'app */
+body, button, span, h1, h2, h3, p {
+  user-select: none; /* Evita la selezione del testo */
+  -webkit-user-select: none; /* Per Chrome e Electron */
+  -moz-user-select: none; /* Per Firefox */
+  -ms-user-select: none; /* Per Internet Explorer/Edge */
+}
+
+
+
+/* header */
+.header-container {
+  -webkit-app-region: drag; /* abilita trascianmento finestra */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 10px); /* Leggero margine per evitare overflow */
+  height: 40px; /* Altezza sufficiente per il trascinamento */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Mantieni i pulsanti a destra */
+  padding: 5px;
+  background-color: transparent; /* Assicurati che l'area sia visibile */
+}
+
+/* Escludi i pulsanti dal trascinamento */
+button {
+  -webkit-app-region: no-drag;
+}
+
+.header-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px; /* Spazio tra i pulsanti */
+}
+
+#shrink-btn {
+  width: 25px; /* Larghezza personalizzata */
+  height: 25px; /* Altezza personalizzata */
+  background-image: url('./assets/shrink.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+}
+
+
+#close-btn {
+  width: 25px; /* Larghezza personalizzata */
+  height: 25px; /* Altezza personalizzata */
+  background-image: url('./assets/close.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+}
+
+
+
+
+/* index - main */
+/*.start-container {
+  position: fixed;
+  bottom: 100px; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#start-btn {
+  width: 150px; 
+  height: 49px; 
+  background-image: url('./assets/start-btn.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; 
+  display: block;
+}
+
+#start-btn::before {
+  content: "";
+  position: absolute;
+  top: -70px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background-image: url('./assets/ready-to-set-the-time.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+*/
+
+
+/* set-time - main */
+.time-container {
+  position: fixed;
+  bottom: 70px; /* Distanza dal fondo */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.time-display{
+  content: "";
+  position: absolute;
+  top: -70px; /* Posiziona sopra il bottone */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background-image: url('./assets/choose-the-time.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+#time {
+  font-family: "VT323", serif;
+  font-size: 50px; /* Puoi regolare la dimensione */
+  font-weight: 400;
+  color: #A16821;
+  margin-top: 30px; /* Sposta il numero più in basso */
+  display: block; /* Necessario perché `<span>` è inline di default */
+}
+
+
+.time-btn {
+  position: relative;
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+  gap: 8px; 
+}
+
+#btn-plus1 {
+  width: 40px; /* Larghezza personalizzata */
+  height: 40px; /* Altezza personalizzata */
+  background-image: url('./assets/plus1-btn.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+}
+
+#btn-plus5 {
+  width: 40px; /* Larghezza personalizzata */
+  height: 40px; /* Altezza personalizzata */
+  background-image: url('./assets/plus5-btn.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+}
+
+#btn-plus10 {
+  width: 40px; /* Larghezza personalizzata */
+  height: 40px; /* Altezza personalizzata */
+  background-image: url('./assets/plus10-btn.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+}
+
+#btn-minus1 {
+  width: 40px; /* Larghezza personalizzata */
+  height: 40px; /* Altezza personalizzata */
+  background-image: url('./assets/minus1-btn.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+}
+
+#start {
+  position: relative;
+  margin: 30px auto 0 auto;
+  width: 150px; /* Larghezza personalizzata */
+  height: 48px; /* Altezza personalizzata */
+  background-image: url('./assets/start-btn.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+  /*border: 2px solid red;*/
+}
+
+
+
+
+
+/* countdown - main */
+.countdown-container {
+  position: fixed;
+  bottom: 70px; /* Distanza dal fondo */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+
+#countdown {
+  font-family: "VT323", serif;
+  font-size: 90px; /* Puoi regolare la dimensione */
+  font-weight: 400;
+  color: #A16821;
+  margin-top: 30px; /* Sposta il numero più in basso */
+  display: block; /* Necessario perché `<span>` è inline di default */
+}
+
+#back-btn {
+  position: relative;
+  margin: 30px auto 0 auto;
+  width: 150px; /* Larghezza personalizzata */
+  height: 48px; /* Altezza personalizzata */
+  background-image: url('./assets/back-btn.png'); /* Percorso del PNG */
+  background-size: cover; /* Ridimensiona l'immagine per riempire il bottone */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px; /* Nasconde il testo */
+  display: block;
+  /*border: 2px solid red;*/
+}

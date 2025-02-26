@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+          <div class="header-btn">
+            <button id="shrink-btn">Shrink</button>
+            <button id="close-btn">Close</button>
+          </div>
+        </div>
+       </header>
+
+    <!-- Main -->
+     <main>
+        <div class="countdown-container">
+            <div id="countdown">00:00</div>
+            <button id="back-btn" onclick="window.location.href='set-time.html'">Back</button>
+        </div>
+     </main>
+
+
+     <audio id="alarm-sound" src="./audio/alarm.wav"></audio>
+
+     <script src="renderer.js"></script>
+
+
+
+  </body>
+</html>
